@@ -2,12 +2,14 @@ package ru.buttonone.numbers;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class NumbersTest {
 
     public static final String NUMBERS_URL = "http://numbersapi.com";
 
+    @DisplayName("rest assured - http://numbersapi.com/2")
     @Test
     public void shouldHaveCorrectGet2() {
 
@@ -29,6 +31,7 @@ public class NumbersTest {
                 .statusCode(200);
     }
 
+    @DisplayName("rest assured - http://numbersapi.com/8/27/date")
     @Test
     public void shouldHaveCorrectGet3() {
         RestAssured
@@ -62,6 +65,7 @@ public class NumbersTest {
                 .statusCode(200);
     }
 
+    @DisplayName("rest assured - http://numbersapi.com/8/math")
     @Test
     public void shouldHaveCorrectGet4() {
         RestAssured

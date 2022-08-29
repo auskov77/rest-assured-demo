@@ -7,11 +7,17 @@ import org.junit.jupiter.api.Test;
 
 public class NumbersTest {
 
-    public static final String NUMBERS_URL = "http://numbersapi.com";
+    public static final String MAIN_URL = "http://numbersapi.com";
+    public static final String NUMBER_URL = "/2";
+    public static final String NUMBERSAPI_COM = "numbersapi.com";
+    public static final String DATE_URL = "/8/27/date";
+    public static final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36";
+    public static final String CONTENT_TYPE = "text/plain; charset=utf-8";
+    public static final String MATH_URL = "/8/math";
 
-    @DisplayName("rest assured - http://numbersapi.com/2")
+    @DisplayName("rest assured - " + MAIN_URL + NUMBER_URL)
     @Test
-    public void shouldHaveCorrectGet2() {
+    public void shouldHaveCorrectGetNumberUrl() {
 
 //        Response response = RestAssured.given().get("http://numbersapi.com/2");
 //
@@ -22,19 +28,19 @@ public class NumbersTest {
 
         RestAssured
                 .given()
-                .baseUri(NUMBERS_URL)
+                .baseUri(MAIN_URL)
                 .header("Request method", "GET")
-                .header("Request URI", "http://numbersapi.com/2")
+                .header("Request URI", MAIN_URL + NUMBER_URL)
                 .header("Accept-Encoding", "gzip, deflate")
                 .header("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
                 .header("Accept", "*/*")
                 .header("Cache-Control", "max-age=0")
                 .header("Connection", "keep-alive")
-                .header("Host", "numbersapi.com")
+                .header("Host", NUMBERSAPI_COM)
                 .header("Upgrade-Insecure-Requests", "1")
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36")
+                .header("User-Agent", USER_AGENT)
                 .when()
-                .get("/2")
+                .get(NUMBER_URL)
                 .then()
                 .contentType(ContentType.TEXT)
                 .log().all()
@@ -46,29 +52,29 @@ public class NumbersTest {
                 .header("Server", "nginx/1.4.6 (Ubuntu)")
                 .header("X-Powered-By", "Express")
                 .header("Connection", "keep-alive")
-                .header("Content-Type", "text/plain; charset=utf-8")
+                .header("Content-Type", CONTENT_TYPE)
                 .header("Access-Control-Allow-Origin", "*")
                 .statusCode(200);
     }
 
-    @DisplayName("rest assured - http://numbersapi.com/8/27/date")
+    @DisplayName("rest assured - " + MAIN_URL + DATE_URL)
     @Test
-    public void shouldHaveCorrectGet3() {
+    public void shouldHaveCorrectGetDateUrl() {
         RestAssured
                 .given()
-                .baseUri(NUMBERS_URL)
+                .baseUri(MAIN_URL)
                 .header("Request method", "GET")
-                .header("Request URI", "http://numbersapi.com/8/27/date")
+                .header("Request URI", MAIN_URL + DATE_URL)
                 .header("Accept-Encoding", "gzip, deflate")
                 .header("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
                 .header("Accept", "*/*")
                 .header("Cache-Control", "max-age=0")
                 .header("Connection", "keep-alive")
-                .header("Host", "numbersapi.com")
+                .header("Host", NUMBERSAPI_COM)
                 .header("Upgrade-Insecure-Requests", "1")
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36")
+                .header("User-Agent", USER_AGENT)
                 .when()
-                .get("/8/27/date")
+                .get(DATE_URL)
                 .then()
                 .contentType(ContentType.TEXT)
                 .log().all()
@@ -80,29 +86,29 @@ public class NumbersTest {
                 .header("Server", "nginx/1.4.6 (Ubuntu)")
                 .header("X-Powered-By", "Express")
                 .header("Connection", "keep-alive")
-                .header("Content-Type", "text/plain; charset=utf-8")
+                .header("Content-Type", CONTENT_TYPE)
                 .header("Access-Control-Allow-Origin", "*")
                 .statusCode(200);
     }
 
-    @DisplayName("rest assured - http://numbersapi.com/8/math")
+    @DisplayName("rest assured - " + MAIN_URL + MATH_URL)
     @Test
-    public void shouldHaveCorrectGet4() {
+    public void shouldHaveCorrectGetMathUrl() {
         RestAssured
                 .given()
-                .baseUri(NUMBERS_URL)
+                .baseUri(MAIN_URL)
                 .header("Request method", "GET")
-                .header("Request URI", "http://numbersapi.com/8/math")
+                .header("Request URI", MAIN_URL + MATH_URL)
                 .header("Accept-Encoding", "gzip, deflate")
                 .header("Accept-Language", "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7")
                 .header("Accept", "*/*")
                 .header("Cache-Control", "max-age=0")
                 .header("Connection", "keep-alive")
-                .header("Host", "numbersapi.com")
+                .header("Host", NUMBERSAPI_COM)
                 .header("Upgrade-Insecure-Requests", "1")
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36")
+                .header("User-Agent", USER_AGENT)
                 .when()
-                .get("/8/math")
+                .get(MATH_URL)
                 .then()
                 .contentType(ContentType.TEXT)
                 .log().all()
@@ -114,7 +120,7 @@ public class NumbersTest {
                 .header("Server", "nginx/1.4.6 (Ubuntu)")
                 .header("X-Powered-By", "Express")
                 .header("Connection", "keep-alive")
-                .header("Content-Type", "text/plain; charset=utf-8")
+                .header("Content-Type", CONTENT_TYPE)
                 .header("Access-Control-Allow-Origin", "*")
                 .statusCode(200);
     }
